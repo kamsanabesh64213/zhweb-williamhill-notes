@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一点提醒 · 威廉希尔</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f6f3;
+            color: #23211f;
+            font-family: "Georgia", "Times New Roman", "Noto Serif SC", serif;
+            line-height: 1.65;
+            padding: 0 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-wrap {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 5rem 0 4rem 0;
+            flex: 1;
+        }
+
+        /* hero 开场 —— 极短，仅一句话 */
+        .hero-short {
+            margin-bottom: 3.5rem;
+            font-size: 1.5rem;
+            letter-spacing: 0.01em;
+            font-weight: 400;
+            color: #2f2b27;
+            border-left: 3px solid #c7b9a8;
+            padding-left: 1.4rem;
+            line-height: 1.5;
+        }
+
+        .hero-short strong {
+            font-weight: 600;
+            color: #1f1b17;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin: 2.8rem 0 1rem 0;
+            color: #362f2a;
+            letter-spacing: 0.02em;
+            border-bottom: 1px solid #e2d9cf;
+            padding-bottom: 0.3rem;
+        }
+
+        p {
+            margin: 1.2rem 0;
+            font-size: 1rem;
+            color: #3a3530;
+        }
+
+        .intro-block {
+            background: #fdfbf9;
+            padding: 1.8rem 1.8rem 2rem 1.8rem;
+            border-radius: 2px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+            margin: 2.2rem 0 2rem 0;
+        }
+
+        .intro-block p {
+            margin: 0.9rem 0;
+        }
+
+        /* 特点列表 — 用 <ul> 但温和不张扬 */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.8rem 0 1rem 0;
+        }
+
+        .feature-list li {
+            padding: 0.8rem 0 0.8rem 1.4rem;
+            border-left: 2px solid transparent;
+            background: linear-gradient(to right, #f9f5f0, transparent);
+            margin-bottom: 0.6rem;
+            font-size: 0.98rem;
+            position: relative;
+            transition: border-color 0.2s;
+        }
+
+        .feature-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #9c8b7a;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .feature-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .gentle-end {
+            margin-top: 3.2rem;
+            padding: 1.6rem 0 0.4rem 0;
+            border-top: 1px solid #e1d7cc;
+            font-style: italic;
+            color: #5a524a;
+            font-size: 0.95rem;
+        }
+
+        .gentle-end a {
+            color: #4f443c;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: #cbbeb2;
+        }
+
+        .gentle-end a:hover {
+            text-decoration-color: #8f7b68;
+        }
+
+        .faq-mini {
+            background: #f3efe9;
+            padding: 1.4rem 1.6rem;
+            margin: 2.5rem 0 1.8rem 0;
+            border-radius: 2px;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.6rem;
+        }
+
+        .faq-mini details summary {
+            cursor: pointer;
+            font-weight: 500;
+            color: #2f2924;
+            padding: 0.3rem 0;
+            list-style: none;
+        }
+
+        .faq-mini details summary::marker {
+            color: #a4917e;
+        }
+
+        .faq-mini details p {
+            margin: 0.5rem 0 0.2rem 0.6rem;
+            font-size: 0.93rem;
+            color: #4d443c;
+        }
+
+        .footer-note {
+            margin-top: 3rem;
+            font-size: 0.82rem;
+            color: #7d7064;
+            text-align: center;
+            border-top: 1px solid #e7ded4;
+            padding-top: 2rem;
+        }
+
+        a {
+            color: #3b322b;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: #d6c8ba;
+            transition: text-decoration-color 0.2s;
+        }
+
+        a:hover {
+            text-decoration-color: #8d7a68;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 500px) {
+            .page-wrap {
+                padding: 2.5rem 0 2.5rem 0;
+            }
+
+            .hero-short {
+                font-size: 1.25rem;
+                padding-left: 1rem;
+                border-left-width: 2px;
+            }
+
+            .intro-block {
+                padding: 1.4rem 1.2rem;
+            }
+
+            h2 {
+                font-size: 1.1rem;
+            }
+
+            .faq-mini {
+                padding: 1rem 1rem;
+            }
+
+            body {
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero-short {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+
+        <!-- 开场短句：直白地说明来意，带叙述感 -->
+        <div class="hero-short">
+            偶尔，你只是想找一个简洁的起点。<br>
+            关于<strong>威廉希尔</strong>，这篇记录或许能帮你少走几步。
+        </div>
+
+        <!-- 承接段落：简明指南的口吻 -->
+        <div class="intro-block">
+            <p>
+                很多人第一次接触这个名字时，往往带着一点好奇和一点不确定。
+                它不是一个需要反复研究的东西，更像是一个入口——一个你可以在需要时直接前往的地方。
+                如果你正在寻找关于「威廉希尔」的基本印象，不妨先把它看作一个安静、直接的存在。
+            </p>
+            <p>
+                与其堆砌功能清单，不如记住一个更朴素的思路：先确认你想要什么，再去看它能否匹配。
+                下面列出几个容易忽略、但又值得留意的特点，它们或许能帮你更快地形成判断。
+            </p>
+        </div>
+
+        <!-- 特点列表 —— 温和且有叙述感 -->
+        <h2>几个值得注意的侧面</h2>
+        <ul class="feature-list">
+            <li><strong>结构不复杂</strong>——页面层级偏平，主要入口都在你能想到的位置，没有多余绕弯的导航。</li>
+            <li><strong>语言与区域</strong>——中文支持比较完整，整个界面没有阅读障碍，偶尔出现英文术语也会有对应的翻译说明。</li>
+            <li><strong>响应速度</strong>——多数情况下加载顺畅，图片与内容区块不拖沓，等待感很弱。</li>
+            <li><strong>常见问题回应</strong>——帮助中心里对账户、支付、使用限制等有专门的说明，基本覆盖了新手会问到的几类问题。</li>
+            <li><strong>界面风格</strong>——配色偏中性，没有过度修饰，信息排列留有呼吸感，不让人眼花。</li>
+        </ul>
+
+        <!-- 另一个场景/提醒段落 —— 穿插一点FAQ摘要 -->
+        <p style="margin-top: 2rem;">
+            当然，每个网站都有自己的使用习惯。比如部分功能在移动端和电脑端的布局略有不同，初次使用时可以稍微留意一下。
+            另外，如果你对条款或隐私部分有疑问，直接去页面底部的相关段落查阅，会比第三方转述更准确。
+        </p>
+
+        <!-- FAQ迷你摘要 -->
+        <div class="faq-mini">
+            <details>
+                <summary>是否需要注册才能浏览主要内容？</summary>
+                <p>大部分信息无需账户也能查看，但某些特定模块（如个人中心、偏好设置）需要登录。</p>
+            </details>
+            <details>
+                <summary>推荐使用哪个浏览器？</summary>
+                <p>Chrome、Edge、Safari 较新版均可，部分旧版浏览器可能出现排版偏移。</p>
+            </details>
+            <details>
+                <summary>遇到页面打不开时怎么办？</summary>
+                <p>先检查网络连接，其次尝试清除缓存或切换网络环境。如果持续无法访问，建议通过官方帮助渠道确认。</p>
+            </details>
+        </div>
+
+        <!-- 温和结尾 —— 句子中自然嵌入链接（可见文本严格等于“威廉希尔”） -->
+        <div class="gentle-end">
+            如果你想亲自看一看，可以去<a href="https://zhweb--williamhill.com">威廉希尔</a>。
+            无需带着太多预设，把它当作一个普通的站点去观察，反而更容易感受到它的实际面貌。
+        </div>
+
+        <!-- 底部小字，不喧宾夺主 -->
+        <div class="footer-note">
+            仅作信息整理 · 非官方页面
+        </div>
+    </div>
+</body>
+</html>
